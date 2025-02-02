@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ocripthree - Contato</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: #f8fafc;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: white;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #4f46e5;
+    }
+
+    header .logo img {
+      margin-right: 8px;
+    }
+
+    header .logo a {
+      text-decoration: none;
+      color: #4f46e5;
+    }
+
+    header .logo a:hover {
+      color: #3b82f6;
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    header nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    header nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    header nav ul li a:hover {
+      color: #4f46e5;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(to right, #4f46e5, #3b82f6);
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact h2 {
+      font-size: 2rem;
+      color: #4f46e5;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .contact p {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact form label {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .contact form input,
+    .contact form textarea,
+    .contact form button {
+      padding: 0.8rem;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      font-size: 1rem;
+    }
+
+    .contact form input:focus,
+    .contact form textarea:focus {
+      outline: none;
+      border-color: #4f46e5;
+    }
+
+    .contact form button {
+      background: #4f46e5;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .contact form button:hover {
+      background: #3b82f6;
+      transform: scale(1.05);
+    }
+
+    .footer {
+      background: #1f2937;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .footer p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+      header nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        width: 100%;
+        padding: 1rem 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      header nav.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      header .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: #333;
+      }
+    }
+  </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const menuToggle = document.querySelector(".menu-toggle");
+          const nav = document.querySelector("header nav");
+    
+          menuToggle.addEventListener("click", () => {
+            nav.classList.toggle("active");
+          });
+        });
+    
+      </script>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+        <div class="logo"><img src="./public/ocripthree-logo-50x50.png" alt=""><a href="./index.html">Ocripthree</a></div>
+        <button class="menu-toggle">☰</button>
+      <nav>
+        <ul>
+          <li><a href="./products.html">Products</a></li>
+          <li><a href="./documents.html">Documents</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Entre em Contato</h1>
+    <p>Envie um e-mail para nós ou envie um formulário! Nosso e-mail: dev@ocripthree.com</p>
+  </section>
+
+  <section class="contact">
+    <h2>Fale Conosco</h2>
+    <p>Preencha o formulário abaixo e entraremos em contato o mais rápido possível.</p>
+    <form id="contactForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfyHoAD3RSMxLWSS8Bw2rpqu70XA9lINRU1Mju7s1vMTAlbuw/formResponse" method="POST" target="_blank">
+      <input type="text" name="entry.2050301410" placeholder="Seu Nome" required>
+      <input type="email" name="entry.564521885" placeholder="Seu E-mail" required>
+      <textarea name="entry.1231268263" placeholder="Sua Mensagem" required></textarea>
+      <button type="submit">Enviar</button>
+  </form>
+  </section>
+
+  <footer class="footer">
+    <img src="./public/ocripthree-logo-40x40.png" alt=""> <p>&copy; 2025 Ocripthree. Todos os direitos reservados.</p>
+  </footer>
+  <script src="contact.js"></script>
+</body>
+
+</html>

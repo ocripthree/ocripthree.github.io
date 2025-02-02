@@ -1,0 +1,218 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  .container {
+    display: flex;
+  }
+
+  .header {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .header .containerHeader {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+  }
+
+  .header .logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4f46e5;
+  }
+
+  .header .logo img {
+    margin-right: 8px;
+  }
+
+  .header .logo a {
+    text-decoration: none;
+    color: #4f46e5;
+  }
+
+  .header .logo a:hover {
+    color: #3b82f6;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    transition: color 0.3s;
+  }
+
+  .header nav ul li a:hover {
+    color: #4f46e5;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 150px;
+    background: linear-gradient(to right, #4f46e5, #3b82f6);
+    color: #fff;
+    padding: 15px;
+    height: 100vh;
+    position: fixed;
+    overflow-y: auto;
+  }
+  
+  .sidebar h2 a {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+  }
+  
+  .sidebar ul li {
+    margin: 15px 0;
+  }
+  
+  .sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+  }
+  
+  .sidebar ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Conteúdo Principal */
+  .content {
+    margin-left: 150px;
+    padding: 20px;
+    width: calc(100% - 150px);
+  }
+  
+  /* Adicione perspective no container que envolve as sections */
+.content {
+  /* ...outras regras que você já tenha (margin, padding etc.) */
+  perspective: 800px; /* controla a "profundidade" do 3D */
+}
+
+/* Estilização das sections */
+.content section {
+  margin-bottom: 40px;
+  background-color: #fff;
+  
+  /* Cantos arredondados */
+  border-radius: 8px;
+
+  /* Sombra suave inicial */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  
+  /* Espaço interno */
+  padding: 20px;
+
+  /* Posição inicial "plana" */
+  transform: translateZ(0);
+  
+  /* Transição suave na transformação e na sombra */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+.content section:hover {
+  /* "Avança" um pouco para frente */
+  transform: translateZ(20px);
+  
+  /* Sombra fica um pouco mais forte */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+  .content h2 {
+    margin-bottom: 10px;
+    font-size: 2rem;
+    color: #2c3e50;
+  }
+  
+  .content p, .content ul, .content ol {
+    margin-bottom: 15px;
+    margin: 10px;
+  }
+  
+  .content pre {
+    background-color: #eaeaea;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+  }
+
+  @media (max-width: 768px) {
+    .sidebar{
+        visibility: hidden;
+    }
+    .content {
+        margin-left: 0px;
+        width: 100%;
+    }
+    .hero h1 {
+      font-size: 2rem;
+    }
+
+    .hero p {
+      font-size: 1rem;
+    }
+    header nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      width: 100%;
+      padding: 1rem 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    header nav.active {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    header .menu-toggle {
+      display: block;
+      cursor: pointer;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: #333;
+    }
+  }

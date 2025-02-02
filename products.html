@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocripthree - Products</title>
+    <link rel="icon" href="./public/favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: #f8fafc;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 1.5rem;
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4f46e5;
+        }
+
+        header .logo img {
+            margin-right: 8px;
+        }
+
+        header .logo a {
+            text-decoration: none;
+            color: #4f46e5;
+        }
+
+        header .logo a:hover {
+            color: #3b82f6;
+        }
+
+        header .menu-toggle {
+            display: none;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        header nav ul li a:hover {
+            color: #4f46e5;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(to right, #4f46e5, #3b82f6);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero .cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .hero .cta a {
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            font-size: 1rem;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .hero .cta a.primary {
+            background: white;
+            color: #4f46e5;
+        }
+
+        .hero .cta a.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .hero .cta a:hover {
+            transform: scale(1.05);
+        }
+
+        .product {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .product img {
+            max-width: 400px;
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .product .details {
+            flex: 1;
+            text-align: left;
+        }
+
+        .product .details h2 {
+            font-size: 2rem;
+            color: #4f46e5;
+            margin-bottom: 1rem;
+        }
+
+        .product .details p {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .highlights {
+            padding: 2rem;
+            background: #e5e7eb;
+            text-align: center;
+        }
+
+        .highlights h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlights .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .highlights .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .highlights .card img {
+            width: 60px;
+            margin-bottom: 1rem;
+        }
+
+        .highlights .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #4f46e5;
+        }
+
+        .testimonials {
+            padding: 3rem 2rem;
+            background: #f8fafc;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonials p {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .footer {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            header nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background: white;
+                width: 100%;
+                padding: 1rem 0;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            header nav.active {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            header .menu-toggle {
+                display: block;
+                cursor: pointer;
+                font-size: 1.5rem;
+                background: none;
+                border: none;
+                color: #333;
+            }
+
+            .cta {
+                justify-content: center;
+            }
+
+            .product {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .product img {
+                max-width: 100%;
+            }
+
+            .product .details {
+                text-align: center;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuToggle = document.querySelector(".menu-toggle");
+            const nav = document.querySelector("header nav");
+
+            menuToggle.addEventListener("click", () => {
+                nav.classList.toggle("active");
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo"><img src="./public/ocripthree-logo-50x50.png" alt=""><a href="./index.html">Ocripthree</a>
+            </div>
+            <button class="menu-toggle">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="./products.html">Products</a></li>
+                    <li><a href="./documents.html">Documents</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Bot Obothree</h1>
+        <p>Uma solução inteligente para melhorar o suporte ao cliente e impulsionar sua empresa. Estamos terminando o desenvolvimento da nova versão.</p>
+        <div class="cta">
+            <a class="primary" disabled>Saiba mais</a>
+            <a class="secondary" disabled>Comece agora</a>
+        </div>
+    </section>
+
+    <section class="product">
+        <img src="./public/bot.gif" alt="Ocripthree Bot">
+        <div class="details">
+            <h2>Por que escolher nosso bot?</h2>
+            <p>Nosso bot de suporte oferece:</p>
+            <ul>
+                <li>Integração fácil com qualquer landingpage.</li>
+                <li>Respostas personalizáveis para diferentes cenários.</li>
+                <li>Relatórios detalhados e insights em tempo real.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="highlights">
+        <h2>Destaques do Produto</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="./public/integration.png" alt="Integração">
+                <h3>Integração</h3>
+                <p>Funciona perfeitamente com as ferramentas que você já usa.</p>
+            </div>
+            <div class="card">
+                <img src="./public/customization.png" alt="Personalização">
+                <h3>Personalização</h3>
+                <p>Adapte o bot às necessidades do seu negócio.</p>
+            </div>
+            <div class="card">
+                <img src="./public/analysis.png" alt="Análise">
+                <h3>Análise</h3>
+                <p>Monitore o desempenho e melhore continuamente.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2>Depoimento de um cliente</h2>
+        <p>"Aplicamos o bot em um site interno da empresa, onde era tratado chamados da área de tecnologia. Solicitamos
+            a nossa equipe de tecnologia que colocassem as perguntas mais feitas no sistema de formas diferentes e uma
+            resposta para aquele problema, em menos de uma semana já sentimos um alívio na equipe de tecnologia e ao
+            longo de um mês capturamos as dúvidas que não eram resolvidas atráves do relatório e trabalhamos perguntas e
+            respostas em cima disso. Hoje após 3 meses o resultado é incrível."</p>
+        <p></p>
+    </section>
+
+    <footer class="footer">
+        <img src="./public/ocripthree-logo-40x40.png" alt="">
+        <p>&copy; 2025 Ocripthree. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+</html>
