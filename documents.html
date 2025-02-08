@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Documentação</title>
+  <title>Documentation</title>
   <link rel="icon" href="./public/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="documents.css">
   <script>
@@ -15,7 +15,6 @@
         nav.classList.toggle("active");
       });
     });
-
   </script>
 </head>
 <body>
@@ -33,127 +32,121 @@
         </div>
       </header>
   <div class="container">
-    <!-- Painel Lateral (Sidebar) -->
+    <!-- Sidebar -->
     <aside class="sidebar">
-      <h2><a href="#introducao">Obothree</a></h2>
+      <h2><a href="#introduction">Obothree</a></h2>
       <ul>
-        <li><a href="#instalacao">Instalação</a></li>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#gtm">Google Tag Manager</a></li>
         <li><a href="#shopify">Shopify</a></li>
         <li><a href="#wix">Wix</a></li>
-        <li><a href="#wordpress">Wordpress</a></li>
-        <li><a href="#outras">Outras</a></li>
-        <li><a href="#uso">Como Usar</a></li>
-        <li><a href="#suporte">Suporte</a></li>
+        <li><a href="#wordpress">WordPress</a></li>
+        <li><a href="#others">Others</a></li>
+        <li><a href="#using-bot">How to Use - BOT</a></li>
+        <li><a href="#using-widget">How to Use - Widget</a></li>
+        <li><a href="#support">Support</a></li>
       </ul>
     </aside>
 
-    <!-- Conteúdo Principal -->
+    <!-- Main Content -->
     <main class="content">
-      <section id="introducao">
+      <section id="introduction">
         <h2>Obothree</h2>
-        <p>Bem-vindo à documentação do nosso bot. Aqui você encontrará todas as informações necessárias para começar a usar nossa solução.</p>
+        <p>Welcome to our system documentation. Here you will find all the necessary information to start using our solution. <b>All installation steps apply to both the BOT and the Widget.</b></p>
       </section>
 
-      <section id="instalacao">
-        <h2>Instalação</h2>
-        <p>Para instalar o nosso bot em seu site, siga os passos abaixo:</p>
+      <section id="installation">
+        <h2>Installation</h2>
+        <p>To install our solution on your website, follow these steps:</p>
         <ol>
-          <li>Abra o obothree na tela bot.</li>
-          <li>Clique no botão de copiar snippet.</li>
-          <li>Cole o snippet copiado em seu site dentro da tag &lt;body&gt; o mais perto do início possível, em todas as telas que forem necessárias. Exemplo: <br><pre><code>
+          <li>Open Obothree on the BOT or Widget screen.</li>
+          <li>Click the "Copy Snippet" button.</li>
+          <li>Paste the copied snippet into your website inside the <code>&lt;body&gt;</code> tag, as close to the beginning as possible, on all necessary pages. Example: <br><pre><code>
             &lt;body&gt;
             &lt;!-- Snippet obothree --&gt;
              &lt;script&gt;
                  (function() {
-                     const bot = document.createElement("div");
+                     var bot = document.createElement("div");
                      bot.id = "chatbot-container";
                      document.body.appendChild(bot);
     
-                     const script = document.createElement("script");
+                     var script = document.createElement("script");
                      script.src = "";
                      script.defer = true;
                      document.body.appendChild(script);
                  })();
-             &lt;script&gt;<br>
+             &lt;/script&gt;
             &lt;/body&gt;</code></pre></li>
-            <li>Após feito os passos anteriores e salvar, o chat já estará no seu site!</li>
+            <li>Once the steps above are completed and saved, the chat will be active on your site!</li>
         </ol>
       </section>
 
+      <section id="gtm">
+        <h2>Installation - Google Tag Manager</h2>
+        <p><i>Yes, it is possible to use Google Tag Manager to install our solutions:</i></p>
+        <ol>
+          <li>Open your Google Tag Manager container and click on "Tags," then click "New."</li>
+          <li>Click on "Tag Configuration" and select "Custom HTML."</li>
+          <li>Now copy the desired snippet from our system (either the widget or bot) and paste it into the HTML space.</li>
+          <li>Scroll down to "Triggering" and click the "+" symbol in the upper right corner.</li>
+          <li>Name the trigger and click "Trigger Configuration."</li>
+          <li>Select "Window Loaded" and click "Save" in the upper right corner.</li>
+          <li>Name the tag and click "Save" again.</li>
+        </ol>
+        <p><i><b>Note: </b>You can create a separate tag for each snippet without any problem, allowing better organization on your website.</i></p>
+      </section>
+
       <section id="shopify">
-        <h2>Instalação - Shopify</h2>
-        <p>Siga os passos para instalar, mas lembre-se essas plataformas estão sempre em mudança, caso necessário contate o suporte da plataforma e pergunta onde colocar o código já copiado em nossa plataforma. O objetivo final é sempre inserir nosso código dentro do corpo das páginas de seu site.</p>
+        <h2>Installation - Shopify</h2>
+        <p>Follow these steps for installation. Keep in mind that these platforms are constantly evolving. If necessary, contact platform support and ask where to place the copied code. The ultimate goal is always to insert our code inside the body of your website’s pages.</p>
         <p><b>Desktop</b></p>
         <ul>
-          <li>No admin da Shopify, acesse Loja virtual > Temas.</li>
-          <li>Clique nos três pontinhos > Editar código.</li>
+          <li>In Shopify Admin, go to Online Store > Themes.</li>
+          <li>Click the three dots > Edit code.</li>
         </ul>
-        <p><b>iPhone ou Android</b></p>
+        <p><b>iPhone or Android</b></p>
         <ul>
-          <li>Na seção canais de vendas, toque em loja virtual.</li>
-          <li>Toque em gerenciar temas.</li>
-          <li>Clique em nos três pontinhos > Editar código.</li>
+          <li>In the Sales Channels section, tap Online Store.</li>
+          <li>Tap Manage Themes.</li>
+          <li>Click the three dots > Edit code.</li>
         </ul>
       </section>
 
       <section id="wordpress">
-        <h2>Instalação - Wordpress</h2>
-        <p>Siga os passos para instalar, mas lembre-se essas plataformas estão sempre em mudança, caso necessário contate o suporte da plataforma e pergunta onde colocar o código já copiado em nossa plataforma. O objetivo final é sempre inserir nosso código dentro do corpo das páginas de seu site.</p>
-        <p><b>1° modo de instalação</b></p>
+        <h2>Installation - WordPress</h2>
+        <p>Follow these steps for installation. Keep in mind that these platforms are constantly evolving. If necessary, contact platform support and ask where to place the copied code. The ultimate goal is always to insert our code inside the body of your website’s pages.</p>
+        <p><b>Installation Method 1</b></p>
         <ul>
-          <li>Dentro do painel admnistrativo da Wordpress, clique em Temas e depois em Editor de arquivos de tema.</li>
-          <li>Agora dentro do editor abra o arquivo "Header.php" ele estará em uma lista em algum lugar da tela.</li>
-          <li>Agora dentro do código você irá procurar pela tag <code>&lt;body&gt;</code> e irá colocar o snippet copiado em nosso sistama logo abaixo dela.</li>
-          <li>Agora somente realizar o salvamento e estará pronto para uso.</li>
-        </ul>
-        <p><b>2° modo de instalação</b></p>
-        <ul>
-          <li>Dentro do painel admnistrativo da Wordpress, clique em Plugins e depois em adicionar plugin</li>
-          <li>Pesquise por WPcode e instale o plugin (tem outros que também servem para inserir códigos no body do site, use o que você gosta mais).</li>
-          <li>Ative o plugin</li>
-          <li>Agora no painel irá aparecer a opção "Snippets de código" clique nela e depois em cabeçalho e rodapé</li>
-          <li>Copie o snippet em nosso sistema e cole na parte de body no plugin.</li>
-          <li>Agora somente realizar o salvamento e estará pronto para uso.</li>
+          <li>In the WordPress admin panel, click on "Themes" and then "Theme File Editor."</li>
+          <li>Open the "Header.php" file from the list.</li>
+          <li>Inside the code, locate the <code>&lt;body&gt;</code> tag and paste the copied snippet below it.</li>
+          <li>Save the file, and it will be ready to use.</li>
         </ul>
       </section>
 
-      <section id="wix">
-        <h2>Instalação - Wix</h2>
-        <p>Siga os passos para instalar, mas lembre-se essas plataformas estão sempre em mudança, caso necessário contate o suporte da plataforma e pergunta onde colocar o código já copiado em nossa plataforma. O objetivo final é sempre inserir nosso código dentro do corpo das páginas de seu site.</p>
+      <section id="using-bot">
+        <h2>How to Use - <b>BOT</b></h2>
+        <p>Basic instructions for using the product:</p>
         <ul>
-          <li>Dentro do painel administrativo do site clique em configurações</li>
-          <li>Clique em Código personalizado na seção Avançado.</li>
-          <li>Clique em + Adicionar código personalizado no canto superior direito.</li>
-          <li>Cole o trecho de código na caixa de texto.</li>
-          <li>Insira um nome para o seu código. Dê um nome fácil de reconhecer para que você possa identificá-lo rapidamente depois.</li>
-          <li>Selecione uma opção em Adicionar código às páginas, escolha todas as páginas ou somente as que você desejar.</li>
-          <li>Escolha onde colocar seu código em Adicionar código em > Escolha <b>Body - Início</b></li>
-          <li>Clique em Aplicar.</li>
+          <li>Step 1: Go to the Q&A screen.</li>
+          <li>Step 2: Create different questions for the same answer so the algorithm works better. The system understands that questions are separated by commas. For example, when adding: "Hello, hi, how are you?" the answer will be the same for all these variations.</li>
+          <li>Step 3: Save the information and add more as needed.</li>
         </ul>
       </section>
 
-      <section id="outras">
-        <h2>Instalação - Outras</h2>
-        <p>Siga os passos para instalar, mas lembre-se essas plataformas estão sempre em mudança, caso necessário contate o suporte da plataforma e pergunta onde colocar o código já copiado em nossa plataforma. O objetivo final é sempre inserir nosso código dentro do corpo das páginas de seu site.</p>
+      <section id="using-widget">
+        <h2>How to Use - <b>Widget</b></h2>
+        <p>Basic instructions for using the product:</p>
         <ul>
-          <li>Fale com sua platafoma ou procure em configurações algo como código personlizado, algo nesse sentido pois nosso snippet sempre precisar estar dentro do <code>&lt;body&gt;</code> de seu site.</li>
+          <li>Step 1: In our system, go to the "Widget Configuration" screen.</li>
+          <li>Step 2: Activate the options you want.</li>
+          <li>Step 3: No additional configuration is needed for the form. For WhatsApp, enter your phone number with the country and area code. For Instagram, enter only your username.</li>
         </ul>
       </section>
 
-      <section id="uso">
-        <h2>Como Usar</h2>
-        <p>Aqui estão algumas instruções básicas sobre como usar o produto:</p>
-        <ul>
-          <li>Passo 1: Vá até a tela de perguntas e respostas</li>
-          <li>Passo 2: Crie perguntas diferentes para uma mesma resposta, para o algoritimo trabalhar melhor. O sistema entende que as perguntas são separadas por vírgula, por exemplo quando for adicionar: "Olá, oi, como vai?", a resposta é única para essas perguntas adicionadas juntas.</li>
-          <li>Passo 3: Salve as informações e adicione mais e mais conforme necessário.</li>
-        </ul>
-        <p><i><b>Observação: </b>na página de relatórios e possível ver perguntas que não foram resolvidas, exportando esses dados e trabalhando eles em ferramentas como Google Sheets ou Excel você conseguirá saber quais foram as perguntas que não tiveram uma solução assim conseguindo trabalhar em cima delas e atingir a exelência no bot.</i></p>
-      </section>
-
-      <section id="suporte">
-        <h2>Suporte</h2>
-        <p>Se precisar de ajuda, entre em contato com nosso suporte técnico via e-mail: dev@ocripthree.com</p>
+      <section id="support">
+        <h2>Support</h2>
+        <p>If you need help, contact our technical support via email: dev@ocripthree.com</p>
       </section>
     </main>
   </div>

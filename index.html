@@ -144,15 +144,6 @@
       transform: translateY(-5px);
     }
 
-    .features .card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .features .card p {
-      margin: 0;
-    }
-
     .footer {
       background: #1f2937;
       color: white;
@@ -166,8 +157,14 @@
       margin: 0;
       font-size: 0.9rem;
     }
-
     @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
       header nav {
         display: none;
         position: absolute;
@@ -195,18 +192,18 @@
         color: #333;
       }
     }
-  </style>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const menuToggle = document.querySelector(".menu-toggle");
-      const nav = document.querySelector("header nav");
-
-      menuToggle.addEventListener("click", () => {
-        nav.classList.toggle("active");
-      });
-    });
-
-  </script>
+    </style>
+     <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const menuToggle = document.querySelector(".menu-toggle");
+          const nav = document.querySelector("header nav");
+    
+          menuToggle.addEventListener("click", () => {
+            nav.classList.toggle("active");
+          });
+        });
+    
+      </script>
 </head>
 
 <body>
@@ -226,9 +223,8 @@
 
   <section class="hero">
     <div class="content">
-      <h1>Infraestrutura digital para o futuro</h1>
-      <p>Conecte empresas com soluções de suporte inovadoras e poderosas, criadas para simplificar processos e maximizar
-        resultados.</p>
+      <h1>Digital Infrastructure for the Future</h1>
+      <p>Connect businesses with innovative and powerful support solutions, designed to simplify processes and maximize results.</p>
     </div>
     <div class="image">
       <img src="./public/visual-data.gif" alt="Dashboard Preview">
@@ -236,30 +232,25 @@
   </section>
 
   <section class="features">
-    <h2>Por que escolher Ocripthree?</h2>
+    <h2>Why Choose Ocripthree?</h2>
     <div class="grid">
       <div class="card">
-        <h3>Confiabilidade</h3>
-        <p>Construímos com tecnologia de ponta, a Ocripthree garante uma operação estável, segura e sem interrupções.
-          Nossos sistemas são projetados para oferecer o melhor desempenho, mesmo nos momentos mais críticos.</p>
+        <h3>Reliability</h3>
+        <p>Built with cutting-edge technology, Ocripthree ensures a stable, secure, and uninterrupted operation. Our systems are designed to deliver the best performance, even in critical moments.</p>
       </div>
       <div class="card">
-        <h3>Inovação</h3>
-        <p>Com recursos avançados e sempre atualizados, a Ocripthree traz soluções que simplificam e impulsionam
-          processos complexos. Esteja sempre à frente com ferramentas inovadoras e adaptadas às necessidades do mercado.
-        </p>
+        <h3>Innovation</h3>
+        <p>With advanced and constantly updated features, Ocripthree provides solutions that simplify and enhance complex processes. Stay ahead with innovative tools tailored to market needs.</p>
       </div>
       <div class="card">
-        <h3>Flexibilidade</h3>
-        <p>Cada negócio é único, e a Ocripthree foi criada com isso em mente. Nossas soluções se adaptam ao seu fluxo de
-          trabalho e ajudam sua empresa a crescer no seu ritmo.</p>
+        <h3>Flexibility</h3>
+        <p>Every business is unique, and Ocripthree was created with that in mind. Our solutions adapt to your workflow and help your company grow at its own pace.</p>
       </div>
     </div>
   </section>
 
   <footer class="footer">
-    <img src="./public/ocripthree-logo-40x40.png" alt=""> <p>&copy; 2025 Ocripthree. Todos os direitos reservados.</p>
+    <img src="./public/ocripthree-logo-40x40.png" alt=""> <p>&copy; 2025 Ocripthree. All rights reserved.</p>
   </footer>
 </body>
-
 </html>

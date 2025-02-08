@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ocripthree - Products</title>
+    <title>Ocripthree - Obothree AI Solutions</title>
     <link rel="icon" href="./public/favicon.ico" type="image/x-icon">
     <style>
         body {
@@ -124,7 +124,7 @@
             transform: scale(1.05);
         }
 
-        .product {
+        .section {
             max-width: 1200px;
             margin: 2rem auto;
             padding: 2rem;
@@ -137,24 +137,24 @@
             align-items: center;
         }
 
-        .product img {
+        .section img {
             max-width: 400px;
             width: 100%;
             border-radius: 8px;
         }
 
-        .product .details {
+        .section .details {
             flex: 1;
             text-align: left;
         }
 
-        .product .details h2 {
+        .section .details h2 {
             font-size: 2rem;
             color: #4f46e5;
             margin-bottom: 1rem;
         }
 
-        .product .details p {
+        .section .details p {
             margin-bottom: 1rem;
             font-size: 1rem;
         }
@@ -170,126 +170,66 @@
             margin-bottom: 1.5rem;
         }
 
-        .highlights .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .highlights .card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .highlights .card img {
-            width: 60px;
-            margin-bottom: 1rem;
-        }
-
-        .highlights .card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: #4f46e5;
-        }
-
-        .testimonials {
-            padding: 3rem 2rem;
-            background: #f8fafc;
-            text-align: center;
-        }
-
-        .testimonials h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .testimonials p {
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
-            font-style: italic;
-        }
-
         .footer {
             background: #1f2937;
             color: white;
             text-align: center;
             padding: 2rem 1rem;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .footer p {
-            margin: 0;
-            font-size: 0.9rem;
         }
 
         @media (max-width: 768px) {
-            header nav {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                background: white;
-                width: 100%;
-                padding: 1rem 0;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            }
+      .hero h1 {
+        font-size: 2rem;
+      }
 
-            header nav.active {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
+      .hero p {
+        font-size: 1rem;
+      }
+      header nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        width: 100%;
+        padding: 1rem 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
 
-            header .menu-toggle {
-                display: block;
-                cursor: pointer;
-                font-size: 1.5rem;
-                background: none;
-                border: none;
-                color: #333;
-            }
+      header nav.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
 
-            .cta {
-                justify-content: center;
-            }
-
-            .product {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .product img {
-                max-width: 100%;
-            }
-
-            .product .details {
-                text-align: center;
-            }
-        }
+      header .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: #333;
+      }
+    }
     </style>
-    <script>
+     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const menuToggle = document.querySelector(".menu-toggle");
-            const nav = document.querySelector("header nav");
-
-            menuToggle.addEventListener("click", () => {
-                nav.classList.toggle("active");
-            });
+          const menuToggle = document.querySelector(".menu-toggle");
+          const nav = document.querySelector("header nav");
+    
+          menuToggle.addEventListener("click", () => {
+            nav.classList.toggle("active");
+          });
         });
-
-    </script>
+    
+      </script>
 </head>
 
 <body>
     <header>
         <div class="container">
-            <div class="logo"><img src="./public/ocripthree-logo-50x50.png" alt=""><a href="./index.html">Ocripthree</a>
-            </div>
+            <div class="logo"><img src="./public/ocripthree-logo-50x50.png" alt=""><a href="./index.html">Ocripthree</a></div>
             <button class="menu-toggle">☰</button>
             <nav>
                 <ul>
@@ -302,61 +242,56 @@
     </header>
 
     <section class="hero">
-        <h1>Bot Obothree</h1>
-        <p>Uma solução inteligente para melhorar o suporte ao cliente e impulsionar sua empresa. Estamos terminando o desenvolvimento da nova versão.</p>
+        <h1>Obothree: The Ultimate AI Support Solution</h1>
+        <p>Empower your business with advanced automation, seamless customer support, and data-driven insights.</p>
         <div class="cta">
-            <a class="primary" disabled>Saiba mais</a>
-            <a class="secondary" disabled>Comece agora</a>
+            <a class="primary">Start Free Trial</a>
+            <a class="secondary">Learn More</a>
         </div>
     </section>
 
-    <section class="product">
-        <img src="./public/bot.gif" alt="Ocripthree Bot">
+    <section class="section">
+        <img src="./public/bot.gif" alt="Obothree AI Bot">
         <div class="details">
-            <h2>Por que escolher nosso bot?</h2>
-            <p>Nosso bot de suporte oferece:</p>
+            <h2>Obothree AI Chatbot</h2>
+            <p>Our AI-powered chatbot seamlessly integrates with your website, responding to customer inquiries with speed and accuracy.</p>
             <ul>
-                <li>Integração fácil com qualquer landingpage.</li>
-                <li>Respostas personalizáveis para diferentes cenários.</li>
-                <li>Relatórios detalhados e insights em tempo real.</li>
+                <li>✅ Instant responses to customer queries.</li>
+                <li>✅ Customizable Q&A system to match your business needs.</li>
+                <li>✅ Smart analytics to improve customer interactions.</li>
             </ul>
         </div>
     </section>
 
-    <section class="highlights">
-        <h2>Destaques do Produto</h2>
-        <div class="grid">
-            <div class="card">
-                <img src="./public/integration.png" alt="Integração">
-                <h3>Integração</h3>
-                <p>Funciona perfeitamente com as ferramentas que você já usa.</p>
-            </div>
-            <div class="card">
-                <img src="./public/customization.png" alt="Personalização">
-                <h3>Personalização</h3>
-                <p>Adapte o bot às necessidades do seu negócio.</p>
-            </div>
-            <div class="card">
-                <img src="./public/analysis.png" alt="Análise">
-                <h3>Análise</h3>
-                <p>Monitore o desempenho e melhore continuamente.</p>
-            </div>
+    <section class="section">
+        <div class="details">
+            <h2>Obothree Smart Widget</h2>
+            <p>Engage users with our widget, offering easy access to contact forms, WhatsApp, and Instagram integration.</p>
+            <ul>
+                <li>✅ Captures leads directly on your website.</li>
+                <li>✅ Seamlessly integrates social media and chat platforms.</li>
+                <li>✅ Simple configuration—no coding required.</li>
+            </ul>
         </div>
+        <img src="./public/widget.png" alt="Obothree Widget">
     </section>
 
-    <section class="testimonials">
-        <h2>Depoimento de um cliente</h2>
-        <p>"Aplicamos o bot em um site interno da empresa, onde era tratado chamados da área de tecnologia. Solicitamos
-            a nossa equipe de tecnologia que colocassem as perguntas mais feitas no sistema de formas diferentes e uma
-            resposta para aquele problema, em menos de uma semana já sentimos um alívio na equipe de tecnologia e ao
-            longo de um mês capturamos as dúvidas que não eram resolvidas atráves do relatório e trabalhamos perguntas e
-            respostas em cima disso. Hoje após 3 meses o resultado é incrível."</p>
-        <p></p>
+    <section class="section">
+        <img src="./public/secutiry.png" alt="Secure Payments">
+        <div class="details">
+            <h2>Secure Payments with Stripe</h2>
+            <p>Your transactions are protected by **Stripe**, the world’s most trusted payment processor.</p>
+            <ul>
+                <li>🔒 Encrypted transactions with bank-level security.</li>
+                <li>💳 Support for all major credit cards and digital payments.</li>
+                <li>📄 Transparent billing and automatic renewals.</li>
+            </ul>
+        </div>
     </section>
 
     <footer class="footer">
         <img src="./public/ocripthree-logo-40x40.png" alt="">
-        <p>&copy; 2025 Ocripthree. Todos os direitos reservados.</p>
+        <p>&copy; 2025 Ocripthree. All rights reserved.</p>
     </footer>
 </body>
 
