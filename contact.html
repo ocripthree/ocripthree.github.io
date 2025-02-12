@@ -254,9 +254,9 @@
     <p>Fill out the form below, and we’ll get back to you as soon as possible.</p>
     <form id="contactForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfyHoAD3RSMxLWSS8Bw2rpqu70XA9lINRU1Mju7s1vMTAlbuw/formResponse" method="POST" target="_blank">
       <input type="text" name="entry.2050301410" placeholder="Your Name" required>
-      <input type="email" name="entry.564521885" placeholder="Your Email" required>
+      <input id="email" type="email" name="entry.564521885" placeholder="Your Email" required>
       <textarea name="entry.1231268263" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
+      <button type="submit" onclick="pushDataLayer()">Send Message</button>
   </form>
   </section>
 
