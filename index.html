@@ -264,7 +264,7 @@
   <footer class="footer">
     <img src="./public/ocripthree-logo-40x40.png" alt=""> <p>&copy; 2025 Ocripthree. All rights reserved.</p>
   </footer>
- <!-- Banner de Consentimento de Cookies -->
+ <!-- 🚀 Banner de Consentimento de Cookies -->
 <div id="cookie-banner" class="cookie-banner">
   <p>We use cookies to improve your experience and analyze site traffic. You can accept or refuse the use of cookies.<br>
   </p>
@@ -307,33 +307,24 @@
 </style>
 
 <script>
-  function updateConsent(status) {
-      window.dataLayer = window.dataLayer || [];
+  window.dataLayer = window.dataLayer || [];
 
-      const consentValues = status === "granted" ? {
-          'ad_storage': 'granted',
-          'analytics_storage': 'granted',
-          'ad_user_data': 'granted',
-          'ad_personalization': 'granted',
-          'functionality_storage': 'granted',
-          'personalization_storage': 'granted',
-          'security_storage': 'granted'
-      } : {
-          'ad_storage': 'denied',
-          'analytics_storage': 'denied',
-          'ad_user_data': 'denied',
-          'ad_personalization': 'denied',
-          'functionality_storage': 'denied',
-          'personalization_storage': 'denied',
-          'security_storage': 'denied'
+  function updateConsent(status) {
+      const consentValues = {
+          'ad_storage': status,
+          'analytics_storage': status,
+          'ad_user_data': status,
+          'ad_personalization': status,
+          'functionality_storage': status,
+          'personalization_storage': status,
+          'security_storage': status
       };
 
-      console.log("🔍 Atualizando Consentimento: ", consentValues);
-
+      console.log("🔍 Atualizando Consentimento:", consentValues);
       gtag('consent', 'update', consentValues);
       window.dataLayer.push({ 'event': status === "granted" ? 'cookie_consent_given' : 'cookie_consent_denied' });
 
-      console.log("✅ Evento enviado para o GTM:", window.dataLayer);
+      document.getElementById("cookie-banner").style.display = "none";
   }
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -341,8 +332,7 @@
       const acceptBtn = document.getElementById("accept-cookies");
       const denyBtn = document.getElementById("deny-cookies");
 
-      // 🚀 Inicializa o Consent Mode com estado padrão (denied)
-      window.dataLayer = window.dataLayer || [];
+      // 🚀 Configura o Consent Mode com estado inicial "denied"
       gtag('consent', 'default', {
           'ad_storage': 'denied',
           'analytics_storage': 'denied',
@@ -355,7 +345,6 @@
 
       console.log("🚀 Consentimento inicial configurado para 'denied'");
 
-      // 🚀 Se já houver uma escolha salva, aplica e esconde o banner
       const savedConsent = localStorage.getItem("cookieConsent");
       if (savedConsent) {
           updateConsent(savedConsent);
@@ -363,22 +352,17 @@
           return;
       }
 
-      // ✅ Quando aceita os cookies
       acceptBtn.addEventListener("click", function () {
           localStorage.setItem("cookieConsent", "granted");
           updateConsent("granted");
-          banner.style.display = "none";
       });
 
-      // ❌ Quando recusa os cookies
       denyBtn.addEventListener("click", function () {
           localStorage.setItem("cookieConsent", "denied");
           updateConsent("denied");
-          banner.style.display = "none";
       });
   });
 </script>
-
 
 </body>
 </html>
