@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+
+<head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WHTS63MW');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocripthree - Sign Up Now</title>
+    <link rel="icon" href="./public/favicon.ico" type="image/x-icon">
+    <style>
+        /* Global settings */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Fixed Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        header .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        header nav {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        header nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        header nav a:hover {
+            background: #ffcc00;
+            color: #1f1e4e;
+        }
+
+        /* Animated background */
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle, rgba(79, 70, 229, 0.3), rgba(23, 23, 23, 0.9));
+            opacity: 0.8;
+        }
+
+        /* Main container */
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 4rem 1rem;
+            padding-top: 6rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: rgba(79, 70, 229, 0.9);
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            background: #ffcc00;
+            color: #1f1e4e;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(255, 204, 0, 0.5);
+        }
+
+        .video-section {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            margin-bottom: 4rem;
+        }
+
+        .video-section h2 {
+            font-size: 2rem;
+            color: #ffcc00;
+            margin-bottom: 1rem;
+        }
+
+        .video-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .video-container {
+            position: relative;
+            max-width: 800px;
+            margin: auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 450px;
+            border-radius: 12px;
+            border: none;
+        }
+
+        /* Technology Highlights */
+        .highlights {
+            margin: 4rem 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .highlight {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .highlight:hover {
+            transform: scale(1.05);
+        }
+
+        .highlight img {
+            width: 50px;
+            margin-bottom: 1rem;
+        }
+
+        /* Content sections */
+        .sections {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .section img {
+            max-width: 400px;
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .section-content {
+            flex: 1;
+        }
+
+        .section-content h2 {
+            font-size: 2rem;
+            color: #ffcc00;
+            margin-bottom: 1rem;
+        }
+
+        .section-content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            color: #fff;
+            padding: 2rem 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            header nav {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHTS63MW"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header>
+        <a href="./index.html" class="logo">Ocripthree</a>
+        <nav>
+            <a href="https://www.ocripthree.com" target="_blank">Visit our website</a>
+        </nav>
+    </header>
+    <div class="background"></div>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Chatbot & Lead Capture, Fully Automated</h1>
+            <p><b>Let your website sell for you! A customizable bot + lead widget, capturing clients at the right moment.</b>
+                Only $35 for the first 50 clients! After that, the price will return to $50.</p>
+            <a href="https://app.ocripthree.com/Register.html" class="cta-button" target="_blank">7 Days Free!</a>
+        </section>
+
+        <!-- Explainer Video -->
+        <section class="video-section">
+            <h2>See Ocripthree in Action</h2>
+            <p>Watch the video below and discover how our system can improve your customer support and lead management.</p>
+            <div class="video-container">
+                <iframe width="100%" height="400" src="https://www.youtube.com/embed/g8oH1wCTkAs" frameborder="0"
+                    allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- Technological Highlights -->
+        <div class="highlights">
+            <div class="highlight">
+                <img src="./public/innovation.png" alt="Innovation">
+                <h3>Innovation</h3>
+                <p>We use cutting-edge technologies to meet your business needs.</p>
+            </div>
+            <div class="highlight">
+                <img src="./public/security.png" alt="Security">
+                <h3>Security</h3>
+                <p>Your payments and data are protected with Stripe, a global leader in payment security.</p>
+            </div>
+            <div class="highlight">
+                <img src="./public/support.png" alt="Global Support">
+                <h3>Global Support</h3>
+                <p>We serve customers worldwide with top-quality service and efficiency.</p>
+            </div>
+        </div>
+
+        <!-- Content Sections -->
+        <div class="sections">
+            <section class="section">
+                <img src="./public/automation.png" alt="Smart Bot">
+                <div class="section-content">
+                    <h2>Powerful Automation</h2>
+                    <p>Our bot responds to customer questions in seconds, ensuring efficient and flawless support.</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-content">
+                    <h2>Simplified Lead Management</h2>
+                    <p>Capture valuable visitor information and turn it into business opportunities. Clear reports for quick decisions.</p>
+                </div>
+                <img src="./public/leads.png" alt="Lead Management">
+            </section>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Ocripthree. All rights reserved. <a href="https://www.ocripthree.com" target="_blank">Visit our website</a></p>
+    </footer>
+</body>
+
+</html>
