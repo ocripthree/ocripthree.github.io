@@ -309,7 +309,7 @@
 <script>
   function updateConsent(status) {
       window.dataLayer = window.dataLayer || [];
-      
+
       const consentValues = status === "granted" ? {
           'ad_storage': 'granted',
           'analytics_storage': 'granted',
@@ -328,8 +328,12 @@
           'security_storage': 'denied'
       };
 
+      console.log("🔍 Atualizando Consentimento: ", consentValues);
+
       gtag('consent', 'update', consentValues);
       window.dataLayer.push({ 'event': status === "granted" ? 'cookie_consent_given' : 'cookie_consent_denied' });
+
+      console.log("✅ Evento enviado para o GTM:", window.dataLayer);
   }
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -348,6 +352,8 @@
           'personalization_storage': 'denied',
           'security_storage': 'denied'
       });
+
+      console.log("🚀 Consentimento inicial configurado para 'denied'");
 
       // 🚀 Se já houver uma escolha salva, aplica e esconde o banner
       const savedConsent = localStorage.getItem("cookieConsent");
@@ -372,6 +378,7 @@
       });
   });
 </script>
+
 
 </body>
 </html>
