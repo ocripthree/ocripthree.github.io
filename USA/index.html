@@ -268,6 +268,122 @@
             }
         }
     </style>
+
+    <!-- Banner de Consentimento de Cookies -->
+<div id="cookie-banner" class="cookie-banner">
+    <p>We use cookies to improve your experience and analyze site traffic. You can accept or refuse the use of cookies.<br>
+    </p>
+    <button id="accept-cookies" class="btn accept">Accept</button>
+    <button id="deny-cookies" class="btn deny">Refuse</button>
+  </div>
+  
+  <style>
+    .cookie-banner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        color: #fff;
+        padding: 15px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        z-index: 9999;
+    }
+    .btn {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+    .accept {
+        background: #28a745;
+        color: white;
+    }
+    .deny {
+        background: #dc3545;
+        color: white;
+    }
+  </style>
+  
+  <!-- Google Tag Script -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16867047207"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  
+  // Definir consentimento padrão como "denied"
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'functionality_storage': 'denied',
+    'personalization_storage': 'denied',
+    'security_storage': 'denied'
+  });
+  
+  gtag('js', new Date());
+  gtag('config', 'TAG_ID');
+  </script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const banner = document.getElementById("cookie-banner");
+        const acceptBtn = document.getElementById("accept-cookies");
+        const denyBtn = document.getElementById("deny-cookies");
+  
+        // Verifica se já há um consentimento salvo no localStorage
+        const savedConsent = localStorage.getItem("cookieConsent");
+        if (savedConsent) {
+            banner.style.display = "none";
+            if (savedConsent === "granted") {
+                consentGranted();
+            }
+            return;
+        }
+  
+        // Função para conceder consentimento
+        function consentGranted() {
+            gtag('consent', 'update', {
+                'ad_storage': 'granted',
+                'ad_user_data': 'granted',
+                'ad_personalization': 'granted',
+                'analytics_storage': 'granted',
+                'functionality_storage': 'granted',
+                'personalization_storage': 'granted',
+                'security_storage': 'granted'
+            });
+            localStorage.setItem("cookieConsent", "granted");
+            banner.style.display = "none";
+            console.log("✅ Consentimento concedido!");
+        }
+  
+        // Função para negar consentimento
+        function consentDenied() {
+            gtag('consent', 'update', {
+                'ad_storage': 'denied',
+                'ad_user_data': 'denied',
+                'ad_personalization': 'denied',
+                'analytics_storage': 'denied',
+                'functionality_storage': 'denied',
+                'personalization_storage': 'denied',
+                'security_storage': 'denied'
+            });
+            localStorage.setItem("cookieConsent", "denied");
+            banner.style.display = "none";
+            console.log("❌ Consentimento negado.");
+        }
+  
+        acceptBtn.addEventListener("click", consentGranted);
+        denyBtn.addEventListener("click", consentDenied);
+    });
+  </script>
 </head>
 
 <body>
