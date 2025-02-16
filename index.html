@@ -264,5 +264,79 @@
   <footer class="footer">
     <img src="./public/ocripthree-logo-40x40.png" alt=""> <p>&copy; 2025 Ocripthree. All rights reserved.</p>
   </footer>
+  <!-- Banner de Consentimento de Cookies -->
+<div id="cookie-banner" class="cookie-banner">
+  <p>Utilizamos cookies para melhorar sua experiência e analisar o tráfego do site. Você pode aceitar ou recusar o uso de cookies.<br>
+      <a href="/politica-de-cookies" target="_blank">Saiba mais</a>
+  </p>
+  <button id="accept-cookies" class="btn accept">Aceitar</button>
+  <button id="deny-cookies" class="btn deny">Recusar</button>
+</div>
+
+<style>
+  .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      z-index: 9999;
+  }
+  .btn {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+  }
+  .accept {
+      background: #28a745;
+      color: white;
+  }
+  .deny {
+      background: #dc3545;
+      color: white;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      const banner = document.getElementById("cookie-banner");
+      const acceptBtn = document.getElementById("accept-cookies");
+      const denyBtn = document.getElementById("deny-cookies");
+
+      // Se o usuário já aceitou ou recusou, não mostrar o banner
+      if (localStorage.getItem("cookieConsent")) {
+          banner.style.display = "none";
+          return;
+      }
+
+      // Ao aceitar os cookies
+      acceptBtn.addEventListener("click", function () {
+          localStorage.setItem("cookieConsent", "accepted");
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({ 'event': 'cookie_consent_given' });
+          gtag('consent', 'update', { 'ad_storage': 'granted', 'analytics_storage': 'granted' });
+          banner.style.display = "none";
+      });
+
+      // Ao recusar os cookies
+      denyBtn.addEventListener("click", function () {
+          localStorage.setItem("cookieConsent", "denied");
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({ 'event': 'cookie_consent_denied' });
+          gtag('consent', 'update', { 'ad_storage': 'denied', 'analytics_storage': 'denied' });
+          banner.style.display = "none";
+      });
+  });
+</script>
 </body>
 </html>
